@@ -3,21 +3,30 @@ using namespace std;
 int main()
 {
 int unit;
-float bill;
+float bill,total,charge;
 cout<<"enter unit";
 cin>>unit;
-if(unit==50)
+if(unit<=50)
 {
-	bill=50*0.50f*0.2f;
+	bill=unit*0.50;
 }
-else if(unit==100)
+else if(unit<=150)
 {
-	bill=100*0.75f*0.2f;
+bill=25+((unit-50)*0.75);	
+	
 }
-else if(unit>=250)
+else if(unit<=250){
+	bill=100+((unit-150)*1.20);
+
+}
+else
 {
-	bill=unit*1.50f*0.2f;
+	bill = 220 + ((unit-250) * 1.50);
+	
 }
-cout<<"total bill is:"<<bill;
+charge=bill*0.20;
+	total=bill+charge;
+	cout<<total;
+
 return 0;
 }
